@@ -1,24 +1,12 @@
 import React from "react";
 import { ApolloProvider } from "react-apollo";
 import client from "../tools/client";
-import Admins from "../components/Admins";
-import Nav from "../components/Nav";
-import IsAuth from "./_isAuth";
-
-
-const Page = () => {
-  return (
-    <>
-      <Nav />
-      <Admins />
-    </>
-  );
-}
+import Login from "../components/Login";
 
 const Index = () => {
   return (
     <ApolloProvider client={client}>
-      <IsAuth page={Page} />
+      <Login/>
     </ApolloProvider>
   );
 }
