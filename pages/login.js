@@ -1,7 +1,7 @@
 import React from "react";
 import { ApolloProvider } from "react-apollo";
 import client from "../tools/client";
-import Login from "../components/Login";
+import Login from "../components/common/Login";
 
 const Index = () => {
   return (

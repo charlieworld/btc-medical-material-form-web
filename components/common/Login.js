@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useApolloClient, useMutation } from "@apollo/react-hooks";
 import { useRouter } from 'next/router'
-import token from '../tools/token'
+import token from '../../tools/token'
 import styled from "styled-components";
-import color from "../assist/color";
-import withLogin from "../model/mutaion/withLogin";
+import color from "../../assist/color";
+import withLogin from "../../model/mutaion/withLogin";
 
 
 const { LoginMutation, LoginVariables } = withLogin;

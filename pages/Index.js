@@ -2,16 +2,13 @@ import React from "react";
 import { ApolloProvider } from "react-apollo";
 import client from "../tools/client";
 import Admins from "../components/Admins";
-import Nav from "../components/Nav";
 import IsAuth from "./_isAuth";
+import WithMainLAyout from "../components/withMainLayout";
 
 
 const Page = () => {
   return (
-    <>
-      <Nav />
-      <Admins />
-    </>
+    <WithMainLAyout page={Admins} />
   );
 }
 
@@ -21,6 +18,6 @@ const Index = () => {
       <IsAuth page={Page} />
     </ApolloProvider>
   );
-}
+};
 
 export default Index;
