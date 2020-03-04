@@ -1,56 +1,41 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
+import styled from "styled-components";
+import color from "../../assist/color";
+import { LogoutOutlined } from "@ant-design/icons";
 
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' },
-].map(link => ({
-  ...link,
-  key: `nav-link-${link.href}-${link.label}`,
-}))
+const Wrapper = styled.div`
+  background-color: ${color.primary};
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const IconSetting = styled(LogoutOutlined) `
+  font-size: 1.2rem;
+`
+
+const IconLogout = styled.div`
+  font-size: 1.2rem;
+  cursor: pointer;
+`
+const TextLogout = styled.span`
+  margin-right: 5px;
+`
+
+const Item = styled.div``;
 
 const Nav = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-      </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
-    </ul>
-
-    <style jsx>{`
-      :global(body) {
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
-          Helvetica, sans-serif;
-      }
-      nav {
-        text-align: center;
-      }
-      ul {
-        display: flex;
-        justify-content: space-between;
-      }
-      nav > ul {
-        padding: 4px 16px;
-      }
-      li {
-        display: flex;
-        padding: 6px 8px;
-      }
-      a {
-        color: #067df7;
-        text-decoration: none;
-        font-size: 13px;
-      }
-    `}</style>
-  </nav>
-)
+  <Wrapper>
+    <Item>
+      <Link href="/">
+        <IconLogout>
+          <TextLogout>登出</TextLogout>
+          <IconSetting />
+        </IconLogout>
+      </Link>
+    </Item>
+  </Wrapper>
+);
 
 export default Nav;

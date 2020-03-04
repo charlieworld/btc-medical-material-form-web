@@ -6,6 +6,10 @@ const query = graphql(gql`
     admins {
       id
       name
+      data {
+        remark
+      }
+      created_at
     }
   }
 `);
